@@ -143,6 +143,31 @@ END//
 USE LAB05;
 CALL fetch_employee_data();
 
+7th ONE
+USE Student;
+db.createCollection("Student");
+db.Student.insertOne({name:"jphn doe",age:30});
+db.Student.insertMany([{name:"john doe",age:25,sem:4},{name:"alice",age:29,sem:5}]);
+db.Studentinfo.find();
+db.student.find().pretty();
+db.Student.findOne({name:"alice"});
+db.student.insertMany([{name:"john doe",age:25},
+{name:"krupa",age:30},
+{name:"kavya",age:29},
+{name:"devika",age:26}]);
+db.Student.updateOne({name:"john doe"},{$set:{age:31}});
+db.Student.find();
+db.Customers.updateMany({age:{$gt:25}},{$inc:{age:1}});
+db.Student.find();
+db.Studentinfo.find();
+db.Studentinfo.updateMany({age:{$gt:30}},{$set:{branch:"cse"}});
+db.Studentinfo.find();
+db.Studentinfo.replaceOne({name:"kavya"},{name:"kavya",age:20,city:"dharwad"});
+db.Studentinfo.deleteOne({name:"kavya"});
+db.Student.deleteMany({age:{$lt:25}});
+db.Studentinfoo.find();
+
+
 
 
 
